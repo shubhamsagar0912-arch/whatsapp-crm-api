@@ -4,10 +4,9 @@ FROM node:18-bullseye-slim
 ENV PUPPETEER_SKIP_CHROMIUM_DOWNLOAD=true
 
 # Install Git (required for dependency retrieval), Chromium, and DNS utilities
-RUN apt-get update && apt-get install -y \
+RUN apt-get update && apt-get install -y --no-install-recommends \
     git \
     chromium \
-    chromium-sandbox \
     libnss3 \
     libxss1 \
     libasound2 \
